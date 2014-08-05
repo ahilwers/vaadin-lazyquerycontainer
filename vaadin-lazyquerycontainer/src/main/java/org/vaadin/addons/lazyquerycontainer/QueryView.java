@@ -85,6 +85,13 @@ public interface QueryView {
      * @return The index of the new item.
      */
     int addItem();
+    
+    /**
+     * Adds a new item to the end of the query result set.
+     *
+     * @return The index of the new item.
+     */
+    Item addItem(Object itemId);
 
     /**
      * Removes item at given index.

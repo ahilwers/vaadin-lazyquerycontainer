@@ -67,4 +67,11 @@ public interface Query {
      * @return The new item.
      */
     Item constructItem();
+
+    /**
+     * Constructs new item to be used when adding items.
+     *
+     * @return The new item.
+     */
+    Item constructItem(Object itemId);
 }

@@ -417,6 +417,18 @@ public final class LazyQueryView implements QueryView, ValueChangeListener {
     @Override
     public int addItem() {
         final Item item = getQuery().constructItem();
+        addItemToList(item);
+        return 0;
+    }
+    
+    @Override
+    public Item addItem(Object itemId) {
+        final Item item = getQuery().constructItem(itemId);
+        addItemToList(item);
+        return item;
+    }
+    
+    private void addItemToList(Item item) {
         if (item.getItemProperty(PROPERTY_ID_ITEM_STATUS) != null) {
             item.getItemProperty(PROPERTY_ID_ITEM_STATUS).setReadOnly(false);
             item.getItemProperty(PROPERTY_ID_ITEM_STATUS).setValue(QueryItemStatus.Added);
@@ -426,8 +438,8 @@ public final class LazyQueryView implements QueryView, ValueChangeListener {
         if (itemIdList instanceof NaturalNumberIdsList) {
             itemIdList = null;
         }
-        return 0;
     }
+    
 
     /**
      * Event handler for value change events. Adds the item to modified list if

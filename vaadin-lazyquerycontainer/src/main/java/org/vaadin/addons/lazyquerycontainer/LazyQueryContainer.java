@@ -362,7 +362,9 @@ public class LazyQueryContainer implements Indexed, Sortable, ItemSetChangeNotif
      * @return new Item
      */
     public final Item addItem(final Object itemId) {
-        throw new UnsupportedOperationException();
+    	Item item = queryView.addItem(itemId);
+        notifyItemSetChanged();
+        return item;
     }
 
     /**
