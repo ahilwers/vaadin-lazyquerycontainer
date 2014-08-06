@@ -23,27 +23,20 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-        
+
 		<repository>
 		   <id>EclipseLink</id>
 		   <url>http://download.eclipse.org/rt/eclipselink/maven.repo</url>
-		</repository>        
+		</repository>
     </repositories>
 
-    <!-- Deploy releases and snapshots to the CloudBees maven repositories -->
-    <distributionManagement>
-        <downloadUrl>http://repository-tlaukkan.forge.cloudbees.com/snapshot/</downloadUrl>
-        <repository>
-            <id>tlaukkan-cloudbees-release</id>
-            <name>tlaukkan-cloudbees-release</name>
-            <url>dav:https://repository-tlaukkan.forge.cloudbees.com/release/</url>
-        </repository>
-        <snapshotRepository>
-            <id>tlaukkan-cloudbees-snapshot</id>
-            <name>tlaukkan-cloudbees-snapshot</name>
-            <url>dav:https://repository-tlaukkan.forge.cloudbees.com/snapshot/</url>
-        </snapshotRepository>
-    </distributionManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>snapshots</name>
+			<url>http://web6.gs-networks.de:8081/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
 
     <build>
         <plugins>
@@ -128,7 +121,7 @@
             <artifactId>vaadin-themes</artifactId>
             <version>${vaadin.version}</version>
         </dependency>
-        <!-- 
+        <!--
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
