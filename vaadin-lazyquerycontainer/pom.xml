@@ -4,7 +4,7 @@
 
     <groupId>org.vaadin.addons.lazyquerycontainer</groupId>
     <artifactId>vaadin-lazyquerycontainer</artifactId>
-    <version>2.1.16-GS-SNAPSHOT</version>
+    <version>2.1.16-GS</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -36,6 +36,11 @@
 			<name>snapshots</name>
 			<url>http://web6.gs-networks.de:8081/artifactory/libs-snapshot-local</url>
 		</snapshotRepository>
+    <repository>
+      <id>central</id>
+      <name>releases</name>
+      <url>http://web6.gs-networks.de:8081/artifactory/libs-release-local</url>
+    </repository>
 	</distributionManagement>
 
     <build>
